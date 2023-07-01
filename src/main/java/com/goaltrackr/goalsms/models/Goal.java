@@ -33,5 +33,7 @@ public class Goal {
     @Column(name = "progress")
     private Double progress;
 
-    
+    @OneToMany(mappedBy = "goal", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Task> taskList = new ArrayList<>();
+
 }
