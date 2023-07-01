@@ -33,6 +33,10 @@ public class Goal {
     @Column(name = "progress")
     private Double progress;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
     @OneToMany(mappedBy = "goal", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Task> taskList = new ArrayList<>();
 
